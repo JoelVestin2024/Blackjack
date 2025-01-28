@@ -10,6 +10,8 @@ def beräkna_summa(hand):
 
     return summa
 
+#Behöver fixa så att klädda kort är värda 10#
+
 kortlek = (list(range(1, 14)) * 4) * 6
 random.shuffle(kortlek)
 
@@ -28,5 +30,5 @@ if dator_summa == 21:
     exit()
 
 if spelarens_summa ==21:
-    print("YESSSS")
+    print("YESSSS!!!")
     exit()
