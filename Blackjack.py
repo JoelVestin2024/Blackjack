@@ -6,9 +6,6 @@ def beräkna_summa(hand):
     summa = sum(justerad_hand)
     antal_ess = justerad_hand.count(1)
 
-    summa = sum(hand)
-    antal_ess = hand.count(1)
-
     while antal_ess > 0 and summa + 10 <= 21:
         summa += 10
         antal_ess -= 1
