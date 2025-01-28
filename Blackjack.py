@@ -26,3 +26,7 @@ print("Datorns kort:", [dator_kort_synligt], "+ ?")
 if dator_summa == 21:
     print("Datorn har 21! Spelet är slut.")
     exit()
+
+if spelarens_summa ==21:
+    print("YESSSS")
+    exit()
