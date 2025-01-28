@@ -1,6 +1,11 @@
 import random
 
 def beräkna_summa(hand):
+
+    justerad_hand = [10 if kort > 10 else kort for kort in hand]
+    summa = sum(justerad_hand)
+    antal_ess = justerad_hand.count(1)
+
     summa = sum(hand)
     antal_ess = hand.count(1)
 
