@@ -30,5 +30,5 @@ if dator_summa == 21:
     exit()
 
 if spelarens_summa ==21:
-    print("YESSSS!!!")
+    print("Blackjack!")
     exit()
