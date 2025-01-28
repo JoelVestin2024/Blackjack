@@ -14,5 +14,4 @@ dator_summa = dator_kort_synligt + dator_kort_hemligt
 
 if dator_summa == 21:
     print("Datorn har 21! Spelet är slut.")
-else:
-    print("")
+    exit()
