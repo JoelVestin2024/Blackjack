@@ -1,8 +1,17 @@
 import random
 
 def beräkna_summa(hand):
-    summa = sum(hand)
-    antal_ess = hand.count(1)
+    summa = 0
+    antal_ess = 0
+
+    for kort in hand:
+        if kort in ["J", "Q", "K"]:
+            summa += 10
+        elif kort == "A":
+            summa += 1
+            antal_ess += 1
+        else:
+            summa += kort
 
     while antal_ess > 0 and summa + 10 <= 21:
         summa += 10
