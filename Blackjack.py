@@ -10,9 +10,7 @@ def beräkna_summa(hand):
 
     return summa
 
-#Behöver fixa så att klädda kort är värda 10#
-
-kortlek = (list(range(1, 14)) * 4) * 6
+kortlek = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10] * 24
 random.shuffle(kortlek)
 
 spelarens_kort = [kortlek.pop(), kortlek.pop()]
