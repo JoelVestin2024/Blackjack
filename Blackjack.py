@@ -39,3 +39,6 @@ if dator_summa == 21:
 if spelarens_summa ==21:
     print("Blackjack!")
     exit()
+
+#Möjlighet att ta ett extra kort om man inte får tjugoett eller högre#
+#Datorn ska försätta att ta kort tills att den får högre en spelaren eller tjugoett#
