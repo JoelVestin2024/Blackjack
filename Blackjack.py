@@ -10,7 +10,7 @@ def beräkna_summa(hand):
 
     return summa
 
-kortlek = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10] * 24
+kortlek = ["A", 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K"] * 24
 random.shuffle(kortlek)
 
 spelarens_kort = [kortlek.pop(), kortlek.pop()]
