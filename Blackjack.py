@@ -40,5 +40,15 @@ if spelarens_summa ==21:
     print("Blackjack!")
     exit()
 
+print("Spelarens slutgiltiga summa:", spelarens_summa)
+print("Datorns slutgiltiga summa:", dator_summa)
+
+if spelarens_summa > dator_summa:
+    print("Grattis! Du vinner!")
+elif spelarens_summa < dator_summa:
+    print("Datorn vinner! Bättre lycka nästa gång.")
+else:
+    print("Det blev oavgjort!")
+
 #Möjlighet att ta ett extra kort om man inte får tjugoett eller högre#
 #Datorn ska försätta att ta kort tills att den får högre en spelaren eller tjugoett#
