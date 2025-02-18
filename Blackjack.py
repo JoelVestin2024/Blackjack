@@ -40,6 +40,20 @@ if spelarens_summa ==21:
     print("Blackjack!")
     exit()
 
+while spelarens_summa < 21:
+    val = input("Vill du ta ett till kort? (j/n): ").lower()
+    if val == "j":
+        nytt_kort = kortlek.pop()
+        spelarens_kort.append(nytt_kort)
+        spelarens_summa = beräkna_summa(spelarens_kort)
+        print("Dina kort:", spelarens_kort, "Summa:", spelarens_summa)
+
+        if spelarens_summa > 21:
+            print("Du blev tjock! Datorn vinner.")
+            exit()
+    else:
+        break
+
 print("Spelarens slutgiltiga summa:", spelarens_summa)
 print("Datorns slutgiltiga summa:", dator_summa)
 
@@ -50,6 +64,6 @@ elif spelarens_summa < dator_summa:
 else:
     print("Det blev oavgjort!")
 
-#Möjlighet att ta ett extra kort om man inte får tjugoett eller högre#
 #Datorn ska försätta att ta kort tills att den får högre en spelaren eller tjugoett#
 #Datorn måste få minst 17#
+#Gör så att man kan vinna eller förlora pengar, man har också en plånbok#
