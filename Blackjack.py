@@ -23,21 +23,20 @@ kortlek = ["A", 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K"] * 24
 random.shuffle(kortlek)
 
 spelarens_kort = [kortlek.pop(), kortlek.pop()]
-dator_kort_synligt = kortlek.pop()
-dator_kort_hemligt = kortlek.pop()
+datorns_kort = [kortlek.pop(), kortlek.pop()]
 
 spelarens_summa = beräkna_summa(spelarens_kort)
-dator_summa = beräkna_summa([dator_kort_synligt, dator_kort_hemligt])
+datorns_summa = beräkna_summa(datorns_kort)
 
 print("Spelarens kort:", spelarens_kort, "Summa:", spelarens_summa)
-print("Datorns kort:", [dator_kort_synligt], "+ ?")
+print("Datorns kort:", [datorns_kort[0]], "+ ?")
 
-if dator_summa == 21:
+if datorns_summa == 21:
     print("Datorn har 21! Spelet är slut.")
     exit()
 
-if spelarens_summa ==21:
-    print("Blackjack!")
+if spelarens_summa == 21:
+    print("Blackjack! Du vinner!")
     exit()
 
 while spelarens_summa < 21:
@@ -54,16 +53,21 @@ while spelarens_summa < 21:
     else:
         break
 
-print("Spelarens slutgiltiga summa:", spelarens_summa)
-print("Datorns slutgiltiga summa:", dator_summa)
+print("\nDatorns kort:", datorns_kort, "Summa:", datorns_summa)
 
-if spelarens_summa > dator_summa:
-    print("Grattis! Du vinner!")
-elif spelarens_summa < dator_summa:
-    print("Datorn vinner! Bättre lycka nästa gång.")
+while datorns_summa < spelarens_summa and datorns_summa < 17:
+    nytt_kort = kortlek.pop()
+    datorns_kort.append(nytt_kort)
+    datorns_summa = beräkna_summa(datorns_kort)
+    print("Datorn drar ett kort:", nytt_kort, "\nDatorns nya summa:", datorns_summa)
+
+if datorns_summa > 21:
+    print("\nDatorn blev tjock! Du vinner!")
+elif datorns_summa > spelarens_summa:
+    print("\nDatorn vinner! Bättre lycka nästa gång.")
+elif datorns_summa < spelarens_summa:
+    print("\nGrattis! Du vinner!")
 else:
-    print("Det blev oavgjort!")
-
-#Datorn ska försätta att ta kort tills att den får högre en spelaren eller tjugoett#
-#Datorn måste få minst 17#
+    print("\nDet blev oavgjort!")
+    
 #Gör så att man kan vinna eller förlora pengar, man har också en plånbok#
