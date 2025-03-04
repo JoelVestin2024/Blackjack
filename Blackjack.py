@@ -69,5 +69,6 @@ elif datorns_summa < spelarens_summa:
     print("\nGrattis! Du vinner!")
 else:
     print("\nDet blev oavgjort!")
-    
+
+#Gör så att man kan köra igen#
 #Gör så att man kan vinna eller förlora pengar, man har också en plånbok#
