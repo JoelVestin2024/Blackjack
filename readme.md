@@ -9,6 +9,9 @@ Skapade funktionen beräkna_summa() för att räkna ut summan av en spelares han
 Testade funktionen för att säkerställa att kortvärdena beräknas korrekt.
 
 2025-01-21
+Justerade beräkna_summa() så att ess korrekt kan räknas både som 1 och 11 beroende på handens sammanlagda värde. Implementerade även en omedelbar vinst- eller förlustutgång om spelaren eller datorn får exakt 21 poäng vid första utdelningen.
+
+Testade spelets startfas upprepade gånger för att identifiera och åtgärda eventuella fel i logiken.
 
 2025-01-27
 
@@ -29,3 +32,5 @@ Testade funktionen för att säkerställa att kortvärdena beräknas korrekt.
 2025-03-03
 
 2025-03-04
+
+2025-03-10
