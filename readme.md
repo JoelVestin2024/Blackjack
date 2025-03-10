@@ -1,15 +1,25 @@
-Blackjack
+2025-01-14
 
-* Kortlek med fyra 1:or, fyra 2:or, ..., fyra Kungar
-* Blanda kortleken
-* Dra ett kort ur leken
-* Ge spelaren 2 kort
-* Ge datorn 1 kort
-* Spelaren kan välja hit eller stand
-* Datorn väljer hit eller stand
-* Vem vinner. Enkel summa. Korten värda 1 - 10
-* Spela om pengar
-* Kunna spela en gång till
-* Knekt, dam kung värda 10
-* Ess är värt 1 eller 11
-* Kan splitta handen
+2025-01-20
+
+2025-01-21
+
+2025-01-27
+
+2025-01-28
+
+2025-02-03
+
+2024-02-04
+
+2025-02-17
+
+2025-02-18
+
+2025-02-24
+
+2025-02-25
+
+2025-03-03
+
+2025-03-04
