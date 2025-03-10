@@ -1,6 +1,12 @@
 2025-01-14
+Påbörjade utvecklingen av spelet genom att skapa en kortlek bestående av 24 uppsättningar av varje korttyp, vilket speglar verkligheten där man använder sig utav 6 kortlekar. Implementerade därefter logiken för att ge spelaren och datorn två kort var vid spelets början.
+
+Genomförde tester för att se till att korten delas ut slumpmässigt och visas korrekt.
 
 2025-01-20
+Skapade funktionen beräkna_summa() för att räkna ut summan av en spelares hand, med särskild hantering av klädda kort och ess. Införde även en första utskrift där spelarens kort och poäng visas, medan datorns andra kort döljs.
+
+Testade funktionen för att säkerställa att kortvärdena beräknas korrekt.
 
 2025-01-21
 
