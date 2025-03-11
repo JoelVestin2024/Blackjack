@@ -74,5 +74,5 @@ def spela_blackjack():
         if spela_igen != "j":
             break
 
-print("\nJasså du är här igen, vad roligt!")
+print("\nJasså du vill spela, vad roligt!")
 spela_blackjack()
