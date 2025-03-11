@@ -57,7 +57,7 @@ def spela_blackjack():
                     nytt_kort = kortlek.pop()
                     datorns_kort.append(nytt_kort)
                     datorns_summa = beräkna_summa(datorns_kort)
-                    print("Datorn drar ett kort:", nytt_kort)
+                    print("\nDatorn drar ett kort:", nytt_kort)
                     print("Datorns nya summa:", datorns_summa)
 
                 if datorns_summa > 21:
