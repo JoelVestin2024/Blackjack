@@ -1,4 +1,5 @@
 import random
+import time #time.sleep(?)#
 
 def beräkna_summa(hand):
     summa = 0
