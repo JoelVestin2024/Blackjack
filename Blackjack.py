@@ -79,3 +79,7 @@ def spela_blackjack():
             break
 
 spela_blackjack()
+
+#Lägg till valuta och plånbok#
+#Lägg till funktionen split#
+#Lägg till funktionen double down#
