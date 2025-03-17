@@ -1,3 +1,6 @@
+2025-03-17
+Implementerade "Import time", för att kunna skapa tidsmellanrum mellan handlingar och lägga till ytterligare tidsfunktioner. 
+
 2025-03-11
 Skapade funktionen spela_blackjack() så att man får valet att spela en omgång till. Förbättrade även strukturen på det som skrivs ut, så att det blir enklare att läsa av informationen i terminalen.
 
