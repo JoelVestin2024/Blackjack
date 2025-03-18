@@ -1,3 +1,8 @@
+2025-03-18
+Implementerade ett statement "spela_vidare = True" för att kunna ta bort all break i koden.
+
+Reverted(Implementerade "Import time", för att kunna skapa tidsmellanrum mellan handlingar och lägga till ytterligare tidsfunktioner.)
+
 2025-03-17
 Implementerade "Import time", för att kunna skapa tidsmellanrum mellan handlingar och lägga till ytterligare tidsfunktioner. 
 

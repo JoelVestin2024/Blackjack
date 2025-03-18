@@ -1,5 +1,7 @@
 import random
-import time
+
+kortlek = ["A", 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K"] * 24
+random.shuffle(kortlek)
 
 def beräkna_summa(hand):
     summa = 0
@@ -19,20 +21,19 @@ def beräkna_summa(hand):
         antal_ess -= 1
 
     return summa
-
+    
 def spela_blackjack():
-    kortlek = ["A", 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K"] * 24
-    random.shuffle(kortlek)
+    
+    spela_vidare = True
 
-    while True:
+    while spela_vidare:
         spelarens_kort = [kortlek.pop(), kortlek.pop()]
         datorns_kort = [kortlek.pop(), kortlek.pop()]
 
         spelarens_summa = beräkna_summa(spelarens_kort)
         datorns_summa = beräkna_summa(datorns_kort)
 
-        time.sleep(3)
-        print("\nSpelarens kort:", spelarens_kort, "Summa:", spelarens_summa)
+        print("Spelarens kort:", spelarens_kort, "Summa:", spelarens_summa)
         print("Datorns kort:", [datorns_kort[0]], "+ ?")
 
         if datorns_summa == 21:
@@ -40,19 +41,19 @@ def spela_blackjack():
         elif spelarens_summa == 21:
             print("Blackjack! Du vinner!")
         else:
-            while spelarens_summa < 21:
+            spelaren_färdig = False
+            while spelarens_summa < 21 and not spelaren_färdig:
                 val = input("\nVill du ta ett till kort? (j/n): ")
                 if val == "j":
                     nytt_kort = kortlek.pop()
                     spelarens_kort.append(nytt_kort)
                     spelarens_summa = beräkna_summa(spelarens_kort)
-                    time.sleep(1)
                     print("\nDina kort:", spelarens_kort, "Summa:", spelarens_summa)
                     if spelarens_summa > 21:
                         print("Du blev tjock! Datorn vinner!")
-                        break
+                        spelaren_färdig = True
                 else:
-                    break
+                    spelaren_färdig = True
 
             if spelarens_summa <= 21:
                 print("\nDatorns kort:", datorns_kort, "Summa:", datorns_summa)
@@ -60,11 +61,9 @@ def spela_blackjack():
                     nytt_kort = kortlek.pop()
                     datorns_kort.append(nytt_kort)
                     datorns_summa = beräkna_summa(datorns_kort)
-                    time.sleep(1)
                     print("\nDatorn drar ett kort:", nytt_kort)
                     print("Datorns nya summa:", datorns_summa)
 
-                time.sleep(1)
                 if datorns_summa > 21:
                     print("\nDatorn blev tjock! Du vinner!")
                 elif datorns_summa > spelarens_summa:
@@ -73,10 +72,9 @@ def spela_blackjack():
                     print("\nGrattis! Du vinner!")
                 else:
                     print("\nDet blev oavgjort!")
-        
-        spela_igen = input("\nVill du spela igen? (j/n):")
-        if spela_igen != "j":
-            break
+
+        spela_igen = input("\nVill du spela igen? (j/n): ")
+        spela_vidare = spela_igen == "j"
 
 spela_blackjack()
 
