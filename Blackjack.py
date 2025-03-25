@@ -1,40 +1,40 @@
 import random
-
-kortlek = ["A", 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K"] * 24
-random.shuffle(kortlek)
+                                                                                               #-------------------#
+kortlek = ["A", 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K"] * 24                                #-Definiera Kortlek-#
+random.shuffle(kortlek)                                                                        #-------------------#
 
 def beräkna_summa(hand):
-    summa = 0
-    antal_ess = 0
-
-    for kort in hand:
-        if kort in ["J", "Q", "K"]:
-            summa += 10
-        elif kort == "A":
-            summa += 1
-            antal_ess += 1
-        else:
-            summa += kort
-
-    while antal_ess > 0 and summa + 10 <= 21:
-        summa += 10
-        antal_ess -= 1
-
-    return summa
+    summa = 0                                                                                  #-------------------#
+    antal_ess = 0                                                                              #-------------------#
+                                                                                               #-------------------#
+    for kort in hand:                                                                          #-------------------#
+        if kort in ["J", "Q", "K"]:                                                            #-------------------#
+            summa += 10                                                                        #-------------------#
+        elif kort == "A":                                                                      #-------------------#
+            summa += 1                                                                         #-------------------#
+            antal_ess += 1                                                                     #---Ess Eller Ej?---#
+        else:                                                                                  #-------------------#
+            summa += kort                                                                      #-------------------#
+                                                                                               #-------------------#
+    while antal_ess > 0 and summa + 10 <= 21:                                                  #-------------------#
+        summa += 10                                                                            #-------------------#
+        antal_ess -= 1                                                                         #-------------------#
+                                                                                               #-------------------#
+    return summa                                                                               #-------------------#
     
-def spela_blackjack():
-    
-    spela_vidare = True
+def spela_blackjack():                                                                         #-------------------#
+                                                                                               #--Startar Spelet---#
+    spela_vidare = True                                                                        #-------------------#
 
-    while spela_vidare:
-        spelarens_kort = [kortlek.pop(), kortlek.pop()]
-        datorns_kort = [kortlek.pop(), kortlek.pop()]
-
-        spelarens_summa = beräkna_summa(spelarens_kort)
-        datorns_summa = beräkna_summa(datorns_kort)
-
-        print("Spelarens kort:", spelarens_kort, "Summa:", spelarens_summa)
-        print("Datorns kort:", [datorns_kort[0]], "+ ?")
+    while spela_vidare:                                                                        #-------------------#
+        spelarens_kort = [kortlek.pop(), kortlek.pop()]                                        #-------------------#
+        datorns_kort = [kortlek.pop(), kortlek.pop()]                                          #-------------------#
+                                                                                               #-------------------#
+        spelarens_summa = beräkna_summa(spelarens_kort)                                        #----Kort Visas-----#
+        datorns_summa = beräkna_summa(datorns_kort)                                            #-------------------#
+                                                                                               #-------------------#
+        print("Spelarens kort:", spelarens_kort, "Summa:", spelarens_summa)                    #-------------------#
+        print("Datorns kort:", [datorns_kort[0]], "+ ?")                                       #-------------------#
 
         if datorns_summa == 21:                                                                #-------------------#
             print("Datorn har 21! Spelet är slut.")                                            #--Har Datorn 21?---#
