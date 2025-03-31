@@ -23,6 +23,10 @@ def beräkna_summa(hand):
         antal_ess -= 1
         
     return summa
+
+#Splita Handen#
+def split_hand(hand):
+    split = spelarens_kort.pop()
     
 #Startar Spelet#
 def spela_blackjack():
