@@ -24,9 +24,15 @@ def beräkna_summa(hand):
         
     return summa
 
-#Splita Handen#
-def split_hand(hand):
-    split = spelarens_kort.pop()
+#Dela Handen#
+def dela_hand(hand):
+    if hand[0] == hand[1]:
+        return [[hand[0]], [hand[1]]]
+    else:
+        return None
+
+#Varje Hand Spelas Separat#
+def spela_hand(hand):
     
 #Startar Spelet#
 def spela_blackjack():

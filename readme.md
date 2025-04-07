@@ -1,3 +1,6 @@
+2025-04-07
+Påbörjade implementaerande av funktionerna "dela_hand" och "spela_hand", så att man får möjligheten att splita handen.
+
 2025-03-25
 
 2025-03-24
