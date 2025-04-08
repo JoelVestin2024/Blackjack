@@ -30,9 +30,6 @@ def dela_hand(hand):
         return [[hand[0]], [hand[1]]]
     else:
         return None
-
-#Varje Hand Spelas Separat#
-def spela_hand(hand):
     
 #Startar Spelet#
 def spela_blackjack():
