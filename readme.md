@@ -1,3 +1,6 @@
+2025-04-22
+Fixade lite med "Saldo", och fortsatte att implementera en split funktionen.
+
 2025-04-07
 Påbörjade implementaerande av funktionerna "dela_hand" och "spela_hand", så att man får möjligheten att splita handen.
 
