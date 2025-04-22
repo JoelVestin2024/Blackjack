@@ -1,5 +1,8 @@
 import random
 
+#Ursprungs innehavet av Riksdaler#
+saldo = 100
+
 #Definiera Kortlek#
 kortlek = ["A", 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K"] * 24
 random.shuffle(kortlek)
@@ -24,7 +27,7 @@ def beräkna_summa(hand):
         
     return summa
 
-#Dela Handen#
+#Dela Handen Till Två Olika Listor Som Spelas Var FÖr Sig#
 def dela_hand(hand):
     if hand[0] == hand[1]:
         return [[hand[0]], [hand[1]]]
@@ -33,19 +36,23 @@ def dela_hand(hand):
     
 #Startar Spelet#
 def spela_blackjack():
-    
+
     spela_vidare = True
-    saldo = 100
+    global saldo
+
 
 #Saldo#  
     while spela_vidare:
         
-        print(f"Du har {saldo} Riksdaler")
-        satsning = int(input("\nHur mycket vill du satsa? "))
+        satsning = int(input(f"Du har {saldo} Riksdaler: Hur mycket vill du satsa? "))
                                                                                                    
+        if saldo == 0:
+            print("Haha, ser ut som att pengarna tog slut!")
+            continue
+        
         if satsning > saldo:                                                                    
             print("Du är för fattig för att satsa så mycket!")                                   
-            continue                                                                          
+            continue                                                                         
 
 #Kort Visas#
         spelarens_kort = [kortlek.pop(), kortlek.pop()]                                       
@@ -55,8 +62,25 @@ def spela_blackjack():
         datorns_summa = beräkna_summa(datorns_kort)                                           
                                                                                         
         print("Spelarens kort:", spelarens_kort, "Summa:", spelarens_summa)                
-        print("Datorns kort:", [datorns_kort[0]], "+ ?")                                  
-        
+        print("Datorns kort:", [datorns_kort[0]], "+ ?") 
+
+#Kollar Om Talen I Listan För "spelarens_kort" Är Likadana, Frågor Sedan Om Spelaren Vill Splitta Ifall Så Är Fallet#       
+        delad_hand = dela_hand(spelarens_kort)
+        if delad_hand:
+            val_splitta = input(f"\nDu har två {spelarens_kort[0]}! Vill du splitta? (j/n): ")
+            if val_splitta == "j":
+                delad_hand[0].append(kortlek.pop())
+                delad_hand[1].append(kortlek.pop())
+
+#Spel För Hand Ett#
+                hand1 = delad_hand[0]
+              
+
+#Spel För Hand Två#
+                hand2 = delad_hand[1]
+                
+                #Inte Färidgt!!!#
+
 #Har Datorn 21?, Har Spelaren 21?, Spelaren Tar kort#
         if datorns_summa == 21:                            
             print("Datorn har 21! Spelet är slut.")                                        
@@ -108,11 +132,10 @@ def spela_blackjack():
             if saldo >= 0:
                 spela_igen = input("\nVill du spela igen? (j/n): ")
                 spela_vidare = spela_igen == "j" 
-            else:          
-                print("Haha, ser ut som att pengarna tog slut!")
+            else:
                 spelaren_färdig = True
                 
 spela_blackjack()
 
-#Lägg till funktionen split#
+#Fortsätt med funktionen split#
 #Lägg till funktionen double down#
