@@ -74,12 +74,26 @@ def spela_blackjack():
 
 #Spel För Hand Ett#
                 hand1 = delad_hand[0]
+                hand1_summa = beräkna_summa(hand1)
+                print("--- Höger Hand ---")
+                print("Dina kort:", hand1, "Summa:", hand1_summa)
+                if input("Vill du ta ett till kort på denna hand? (j/n): ") == "j":
+                    hand1.append(kortlek.pop())
+                summa1 = beräkna_summa(hand1)
+                print("Slutsumma Höger Hand:", summa1)
               
 
 #Spel För Hand Två#
                 hand2 = delad_hand[1]
+                hand2_summa = beräkna_summa(hand2)
+                print("--- vänster Hand ---")
+                print("Dina kort:", hand2, "Summa:", hand2_summa)
+                if input("Vill du ta ett till kort på denna hand? (j/n): ") == "j":
+                    hand2.append(kortlek.pop())
+                summa2 = beräkna_summa(hand2)
+                print("Slutsumma Vänster Hand:", summa2)
                 
-                #Inte Färidgt!!!#
+                #Inte Färidgt!!!#  #Ska Kunna Ta Flera Kort#
 
 #Har Datorn 21?, Har Spelaren 21?, Spelaren Tar kort#
         if datorns_summa == 21:                            
