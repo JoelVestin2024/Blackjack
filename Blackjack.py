@@ -62,7 +62,13 @@ def spela_blackjack():
         datorns_summa = beräkna_summa(datorns_kort)                                           
                                                                                         
         print("Spelarens kort:", spelarens_kort, "Summa:", spelarens_summa)                
-        print("Datorns kort:", [datorns_kort[0]], "+ ?") 
+        print("Datorns kort:", [datorns_kort[0]], "+ ?")
+        
+#Spelet Bryts Ifall Datorn Får Blackjack#
+        if datorns_summa == 21 and datorns_summa == spelarens_summa:
+            print("Push!")
+        if datorns_summa == 21:
+            print("Datorn fick Blackjack!")
 
 #Kollar Om Talen I Listan För "spelarens_kort" Är Likadana, Frågor Sedan Om Spelaren Vill Splitta Ifall Så Är Fallet#       
         delad_hand = dela_hand(spelarens_kort)
@@ -93,7 +99,17 @@ def spela_blackjack():
                 summa2 = beräkna_summa(hand2)
                 print("Slutsumma Vänster Hand:", summa2)
                 
-                #Inte Färidgt!!!#  #Ska Kunna Ta Flera Kort#
+                #Inte Färidgt!!!#  #Ska Kunna Ta Flera Kort, tills att man frå 21#
+                
+                
+#Beräkning Av Datorns Summa#
+                dator_summa = beräkna_summa(datorns_kort)
+                while dator_summa < 17:
+                    datorns_kort.append(kortlek.pop())
+                    dator_summa = beräkna_summa(datorns_kort)
+
+                print("\nDatorns kort:", datorns_kort, "Summa:", dator_summa)
+
 
 #Har Datorn 21?, Har Spelaren 21?, Spelaren Tar kort#
         if datorns_summa == 21:                            
