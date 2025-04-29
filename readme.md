@@ -1,3 +1,9 @@
+2025-04-29
+Implementerade beräkning av resultat för Höger och Vänster Hand i split slingan, genomförde även flera tester för att se vilka nya problem som har kommit upp i takt med att ny kod lagts till.
+
+2025-04-28
+Gjorde så att spelet bryts direkt när Datorn får Blackjack, och beräkning av Datorns summa i Split slingan.
+
 2025-04-22
 Fixade lite med "Saldo", och fortsatte att implementera en split funktionen.
 

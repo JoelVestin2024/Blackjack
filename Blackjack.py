@@ -110,6 +110,39 @@ def spela_blackjack():
 
                 print("\nDatorns kort:", datorns_kort, "Summa:", dator_summa)
 
+#Beräkning Av Resultatet För Hand Ett#
+                if summa1 > 21:
+                    print("Ouch")
+                    saldo -= satsning
+                elif dator_summa > 21 or summa1 > dator_summa:
+                    print("Grattis, vinst på hand ett!")
+                    saldo += satsning
+                elif summa1 < dator_summa:
+                    print("Ouch")
+                    saldo -= satsning
+                else:
+                    print("Push") 
+
+#Beräkning Av Resultatet För Hand Två#
+                if summa2 > 21:
+                    print("Ouch")
+                    saldo -= satsning
+                elif dator_summa > 21 or summa2 > dator_summa:
+                    print("Grattis, vinst på hand två!")
+                    saldo += satsning
+                elif summa2 < dator_summa:
+                    print("Ouch")
+                    saldo -= satsning
+                else:
+                    print("Push") 
+
+                print("\nDu har nu", saldo, "Riksdaler.")
+                spela_igen = input("Vill du spela igen? (j/n): ")
+                spela_vidare = spela_igen == "j"
+                continue                                 
+        
+#Ifall Korten I Handen Är Olika Så Hoppar Spelet Över Allt Och Börjar Nedanför Här Efter Delen "Kort Visas"#
+
 
 #Har Datorn 21?, Har Spelaren 21?, Spelaren Tar kort#
         if datorns_summa == 21:                            
@@ -117,7 +150,7 @@ def spela_blackjack():
             saldo -= satsning                                                             
         elif spelarens_summa == 21:                                                         
             print("Blackjack! Du vinner!")                                            
-            saldo += satsning
+            saldo += satsning * 1.5
         else:
             spelaren_färdig = False                                                        
             while spelarens_summa < 21 and not spelaren_färdig:                                
@@ -168,4 +201,17 @@ def spela_blackjack():
 spela_blackjack()
 
 #Fortsätt med funktionen split#
+
 #Lägg till funktionen double down#
+
+#Ändra så att datorn inte slutar ta kort förrän den har högre en spelarens båda händer#
+
+#Lägg till Blackjack i dela_hand slingan så att man automatiskt får vinst vid 21#
+
+#Lägg till .lower, vid val så att spelet inte avbryts vid fel#
+
+#Fixa problemet med att datorn kan vinna med under 17 om spelaren har under 17#
+
+#Gör så att man kan lägga till flera kort och inte bara 1 vid han1 och hand2#
+
+#Pengarna försvinner vid "Push"#
