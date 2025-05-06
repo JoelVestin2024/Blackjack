@@ -73,10 +73,11 @@ def spela_blackjack():
 #Kollar Om Talen I Listan För "spelarens_kort" Är Likadana, Frågor Sedan Om Spelaren Vill Splitta Ifall Så Är Fallet#       
         delad_hand = dela_hand(spelarens_kort)
         if delad_hand:
-            val_splitta = input(f"\nDu har två {spelarens_kort[0]}! Vill du splitta? (j/n): ")
-            if val_splitta == "j":
-                delad_hand[0].append(kortlek.pop())
-                delad_hand[1].append(kortlek.pop())
+            if saldo >= satsning * 2:
+                val_splitta = input(f"\nDu har två {spelarens_kort[0]}! Vill du splitta? (j/n): ")
+                if val_splitta == "j":
+                    delad_hand[0].append(kortlek.pop())
+                    delad_hand[1].append(kortlek.pop())
 
 #Spel För Hand Ett#
                 hand1 = delad_hand[0]
@@ -151,8 +152,8 @@ def spela_blackjack():
                 print("\nDu har nu", saldo, "Riksdaler.")
                 spela_igen = input("Vill du spela igen? (j/n): ")
                 spela_vidare = spela_igen == "j"
-                continue                                 
-        
+                continue
+                                             
 #Ifall Korten I Handen Är Olika Så Hoppar Spelet Över Allt Och Börjar Nedanför Här Efter Delen "Kort Visas"#
 
 
@@ -212,13 +213,11 @@ def spela_blackjack():
                 
 spela_blackjack()
 
-#Fortsätt med funktionen split#
-
-#Lägg till funktionen double down#
-
-#Ändra så att datorn inte slutar ta kort förrän den har högre en spelarens båda händer#
+#Du ska inte kunna splita om man inte har kvar lika mycket pengar som man redan har bettat för handen#
 
 #Lägg till Blackjack i dela_hand slingan så att man automatiskt får vinst vid 21#
+
+#Ändra så att datorn inte slutar ta kort förrän den har högre en spelarens båda händer#
 
 #Lägg till .lower, vid val så att spelet inte avbryts vid fel#
 
@@ -228,4 +227,4 @@ spela_blackjack()
 
 #Pengarna försvinner vid "Push"#
 
-#Du ska inte kunna splita om man inte har kvar lika mycket pengar som man redan har bettat för handen#
+#Lägg till funktionen double down#
