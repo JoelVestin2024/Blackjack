@@ -1,3 +1,8 @@
+2025-05-06
+Gjorde så att man har möjligheten ta flera kort vid split, fram till att man får 21 eller högre. Fixade även så att man inte har möjligheten att splitta när saldot är mindre än satsningen.
+
+2025-05-05
+
 2025-04-29
 Implementerade beräkning av resultat för Höger och Vänster Hand i split slingan, genomförde även flera tester för att se vilka nya problem som har kommit upp i takt med att ny kod lagts till.
 
