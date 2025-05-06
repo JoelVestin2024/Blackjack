@@ -213,8 +213,6 @@ def spela_blackjack():
                 
 spela_blackjack()
 
-#Du ska inte kunna splita om man inte har kvar lika mycket pengar som man redan har bettat för handen#
-
 #Lägg till Blackjack i dela_hand slingan så att man automatiskt får vinst vid 21#
 
 #Ändra så att datorn inte slutar ta kort förrän den har högre en spelarens båda händer#
