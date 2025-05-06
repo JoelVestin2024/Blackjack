@@ -83,8 +83,15 @@ def spela_blackjack():
                 hand1_summa = beräkna_summa(hand1)
                 print("--- Höger Hand ---")
                 print("Dina kort:", hand1, "Summa:", hand1_summa)
-                if input("Vill du ta ett till kort på denna hand? (j/n): ") == "j":
-                    hand1.append(kortlek.pop())
+                while True:
+                    if beräkna_summa(hand1) >=21:
+                        break
+                    val = input("Vill du ta ett till kort på denna hand? (j/n):")
+                    if val.lower() == "j":
+                        hand1.append(kortlek.pop())
+                        print("Dina kort:", hand1, "Summa", beräkna_summa(hand1))
+                    else:
+                        break
                 summa1 = beräkna_summa(hand1)
                 print("Slutsumma Höger Hand:", summa1)
               
@@ -94,12 +101,17 @@ def spela_blackjack():
                 hand2_summa = beräkna_summa(hand2)
                 print("--- vänster Hand ---")
                 print("Dina kort:", hand2, "Summa:", hand2_summa)
-                if input("Vill du ta ett till kort på denna hand? (j/n): ") == "j":
-                    hand2.append(kortlek.pop())
+                while True:
+                    if beräkna_summa(hand2) >=21:
+                        break
+                    val = input("Vill du ta ett till kort på denna hand? (j/n):")
+                    if val.lower() == "j":
+                        hand2.append(kortlek.pop())
+                        print("Dina kort:", hand2, "Summa", beräkna_summa(hand2))
+                    else:
+                        break
                 summa2 = beräkna_summa(hand2)
                 print("Slutsumma Vänster Hand:", summa2)
-                
-                #Inte Färidgt!!!#  #Ska Kunna Ta Flera Kort, tills att man frå 21#
                 
                 
 #Beräkning Av Datorns Summa#
@@ -215,3 +227,5 @@ spela_blackjack()
 #Gör så att man kan lägga till flera kort och inte bara 1 vid han1 och hand2#
 
 #Pengarna försvinner vid "Push"#
+
+#Du ska inte kunna splita om man inte har kvar lika mycket pengar som man redan har bettat för handen#
