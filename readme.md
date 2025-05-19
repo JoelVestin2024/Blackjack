@@ -1,3 +1,6 @@
+2025-05-19
+SKA SKRIVA
+
 2025-05-06
 Gjorde så att man har möjligheten ta flera kort vid split, fram till att man får 21 eller högre. Fixade även så att man inte har möjligheten att splitta när saldot är mindre än satsningen.
 

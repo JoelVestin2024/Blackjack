@@ -85,7 +85,7 @@ def spela_blackjack():
                 print("--- Höger Hand ---")
                 print("Dina kort:", hand1, "Summa:", hand1_summa)
                 while True:
-                    if beräkna_summa(hand1) >=21:
+                    if beräkna_summa(hand1) == 21 or beräkna_summa(hand1) >=21:
                         break
                     val = input("Vill du ta ett till kort på denna hand? (j/n):")
                     if val.lower() == "j":
@@ -103,7 +103,7 @@ def spela_blackjack():
                 print("--- vänster Hand ---")
                 print("Dina kort:", hand2, "Summa:", hand2_summa)
                 while True:
-                    if beräkna_summa(hand2) >=21:
+                    if beräkna_summa(hand2) == 21 or beräkna_summa(hand2) >=21:
                         break
                     val = input("Vill du ta ett till kort på denna hand? (j/n):")
                     if val.lower() == "j":
@@ -117,37 +117,44 @@ def spela_blackjack():
                 
 #Beräkning Av Datorns Summa#
                 dator_summa = beräkna_summa(datorns_kort)
-                while dator_summa < 17:
+                while dator_summa < 17 or dator_summa < summa1 or dator_summa < summa2:
                     datorns_kort.append(kortlek.pop())
                     dator_summa = beräkna_summa(datorns_kort)
 
                 print("\nDatorns kort:", datorns_kort, "Summa:", dator_summa)
 
 #Beräkning Av Resultatet För Hand Ett#
-                if summa1 > 21:
-                    print("Ouch")
-                    saldo -= satsning
+                if summa1 == 21:
+                    print("Blackjack!")
+                    saldo += satsning * 1.5
                 elif dator_summa > 21 or summa1 > dator_summa:
-                    print("Grattis, vinst på hand ett!")
+                    print("Grattis, vinst på högerhanden!")
                     saldo += satsning
+                elif summa1 > 21:
+                    print("Tyvärr, högerhanden blev tjock :(")
+                    saldo -= satsning
                 elif summa1 < dator_summa:
-                    print("Ouch")
+                    print("Tyvärr, datorn vinner!")
                     saldo -= satsning
                 else:
-                    print("Push") 
+                    print("Push")
+                    
 
 #Beräkning Av Resultatet För Hand Två#
-                if summa2 > 21:
-                    print("Ouch")
-                    saldo -= satsning
+                if summa2 == 21:
+                    print("Blackjack!")
+                    saldo += satsning * 1.5
                 elif dator_summa > 21 or summa2 > dator_summa:
-                    print("Grattis, vinst på hand två!")
+                    print("Grattis, Vinst på vänsterhanden!")
                     saldo += satsning
+                elif summa2 > 21:
+                    print("Tyvärr, vänsterhanden blev tjock!")
+                    saldo -= satsning
                 elif summa2 < dator_summa:
-                    print("Ouch")
+                    print("Tyvärr, datorn vinner!")
                     saldo -= satsning
                 else:
-                    print("Push") 
+                    print("Push")
 
                 print("\nDu har nu", saldo, "Riksdaler.")
                 spela_igen = input("Vill du spela igen? (j/n): ")
@@ -213,16 +220,12 @@ def spela_blackjack():
                 
 spela_blackjack()
 
-#Lägg till Blackjack i dela_hand slingan så att man automatiskt får vinst vid 21#
-
-#Ändra så att datorn inte slutar ta kort förrän den har högre en spelarens båda händer#
-
 #Lägg till .lower, vid val så att spelet inte avbryts vid fel#
-
-#Fixa problemet med att datorn kan vinna med under 17 om spelaren har under 17#
 
 #Gör så att man kan lägga till flera kort och inte bara 1 vid han1 och hand2#
 
 #Pengarna försvinner vid "Push"#
 
 #Lägg till funktionen double down#
+
+#Resultat för Hand1 och Hand2 behöver sorteras#
