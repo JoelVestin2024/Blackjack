@@ -44,15 +44,25 @@ def spela_blackjack():
 #Saldo#  
     while spela_vidare:
         
-        satsning = int(input(f"Du har {saldo} Riksdaler: Hur mycket vill du satsa? "))
-                                                                                                   
-        if saldo == 0:
-            print("Haha, ser ut som att pengarna tog slut!")
-            continue
+        if saldo <= 0:
+            print("Haha, ser ut som att pengarna tog slut")
+            break
         
-        if satsning > saldo:                                                                    
-            print("Du är för fattig för att satsa så mycket!")                                   
-            continue                                                                         
+        while True:
+            try:
+                satsning = int(input(f"Du har {saldo} Riksdaler: Hur mycket vill du satsa? "))
+            except ValueError:
+                print("Försök igen!")
+                continue
+            
+            if satsning < 0:
+                print("Du kan inte satsa något som inte finns!")
+            elif satsning == 0:
+                print("Du kan inte satsa något som inte finns!")
+            elif satsning > saldo:
+                print("Du är för fattig gör att satsa så mycket!")
+            else:
+                break                                                                     
 
 #Kort Visas#
         spelarens_kort = [kortlek.pop(), kortlek.pop()]                                       
@@ -220,4 +230,4 @@ def spela_blackjack():
                 
 spela_blackjack()
 
-#Lägg till funktionen double down#
+#Fixa problemet med att allt craschar om man inte väljer j eller n#

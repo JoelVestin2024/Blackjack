@@ -1,5 +1,6 @@
 2025-05-20
 
+
 2025-05-19
 Jag har justerat villkoren inuti while-looparna som hanterar spelarens val att dra fler kort för vänster respektive höger hand. Ändringen gör att kortdragningen avslutas även när summan är exakt 21.
 
