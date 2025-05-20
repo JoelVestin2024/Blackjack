@@ -127,12 +127,12 @@ def spela_blackjack():
                 if summa1 == 21:
                     print("Blackjack!")
                     saldo += satsning * 1.5
+                elif summa1 > 21:
+                    print("Tyvärr, högerhanden blev tjock :(")
+                    saldo -= satsning 
                 elif dator_summa > 21 or summa1 > dator_summa:
                     print("Grattis, vinst på högerhanden!")
                     saldo += satsning
-                elif summa1 > 21:
-                    print("Tyvärr, högerhanden blev tjock :(")
-                    saldo -= satsning
                 elif summa1 < dator_summa:
                     print("Tyvärr, datorn vinner!")
                     saldo -= satsning
@@ -144,12 +144,12 @@ def spela_blackjack():
                 if summa2 == 21:
                     print("Blackjack!")
                     saldo += satsning * 1.5
+                elif summa2 > 21:
+                    print("Tyvärr, vänsterhanden blev tjock :(")
+                    saldo -= satsning   
                 elif dator_summa > 21 or summa2 > dator_summa:
                     print("Grattis, Vinst på vänsterhanden!")
                     saldo += satsning
-                elif summa2 > 21:
-                    print("Tyvärr, vänsterhanden blev tjock!")
-                    saldo -= satsning
                 elif summa2 < dator_summa:
                     print("Tyvärr, datorn vinner!")
                     saldo -= satsning
@@ -220,12 +220,4 @@ def spela_blackjack():
                 
 spela_blackjack()
 
-#Lägg till .lower, vid val så att spelet inte avbryts vid fel#
-
-#Gör så att man kan lägga till flera kort och inte bara 1 vid han1 och hand2#
-
-#Pengarna försvinner vid "Push"#
-
 #Lägg till funktionen double down#
-
-#Resultat för Hand1 och Hand2 behöver sorteras#

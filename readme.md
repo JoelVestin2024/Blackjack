@@ -1,5 +1,7 @@
+2025-05-20
+
 2025-05-19
-SKA SKRIVA
+Jag har justerat villkoren inuti while-looparna som hanterar spelarens val att dra fler kort för vänster respektive höger hand. Ändringen gör att kortdragningen avslutas även när summan är exakt 21.
 
 2025-05-06
 Gjorde så att man har möjligheten ta flera kort vid split, fram till att man får 21 eller högre. Fixade även så att man inte har möjligheten att splitta när saldot är mindre än satsningen.
