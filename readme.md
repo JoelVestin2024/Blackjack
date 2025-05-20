@@ -1,5 +1,5 @@
 2025-05-20
-
+Förbättrade satsningslogiken i spelet genom att lägga till felhantering för ogiltig input och tydliga kontroller för insatser som är negativa, noll eller större än spelarens saldo. Spelet ger nu bättre feedback och kraschar inte vid felaktiga inmatningar.
 
 2025-05-19
 Jag har justerat villkoren inuti while-looparna som hanterar spelarens val att dra fler kort för vänster respektive höger hand. Ändringen gör att kortdragningen avslutas även när summan är exakt 21.
