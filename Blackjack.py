@@ -127,7 +127,7 @@ def spela_blackjack():
                 while True:
                     if beräkna_summa(hand2) == 21 or beräkna_summa(hand2) >=21:
                         break
-                    val = input("Vill du ta ett till kort på denna hand? (j/n):")
+                    val = input("Vill du ta ett till kort på denna hand? (j/n):") #******************#
                     if val.lower() == "j":
                         hand2.append(kortlek.pop())
                         print("Dina kort:", hand2, "Summa", beräkna_summa(hand2))
@@ -179,7 +179,7 @@ def spela_blackjack():
                     print("Push")
 
                 print("\nDu har nu", saldo, "Riksdaler.")
-                spela_igen = input("Vill du spela igen? (j/n): ")
+                spela_igen = input("Vill du spela igen? (j/n): ")   #*******************************#
                 spela_vidare = spela_igen == "j"
                 continue
                                              
@@ -196,7 +196,7 @@ def spela_blackjack():
         else:
             spelaren_färdig = False                                                        
             while spelarens_summa < 21 and not spelaren_färdig:                                
-                val = input("\nVill du ta ett till kort? (j/n): ")                           
+                val = input("\nVill du ta ett till kort? (j/n): ")     #*******************************#                      
                 if val == "j":                                                                
                     nytt_kort = kortlek.pop()                                                  
                     spelarens_kort.append(nytt_kort)                                           
@@ -235,7 +235,7 @@ def spela_blackjack():
 #Spela Igen?#       
             print("Du har:", saldo,"Riksdaler" )
             if saldo >= 0:
-                spela_igen = input("\nVill du spela igen? (j/n): ")
+                spela_igen = input("\nVill du spela igen? (j/n): ")    #*********************************#
                 spela_vidare = spela_igen == "j" 
             else:
                 spelaren_färdig = True
