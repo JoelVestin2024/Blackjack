@@ -105,12 +105,12 @@ def spela_blackjack():
                     if beräkna_summa(hand1) == 21 or beräkna_summa(hand1) >=21:
                         break
                     while True:
-                        val = input("Vill du ta ett till kort på denna hand? (j/n):")
+                        val = input("Vill du ta ett till kort på denna hand? (j/n):").lower()
                         
-                        if val.lower() == "j":
+                        if val == "j":
                             hand1.append(kortlek.pop())
                             print("Dina kort:", hand1, "Summa", beräkna_summa(hand1))
-                        elif val.lower() == "n":
+                        elif val == "n":
                             break
                         else:
                             print("Försök igen, felaktigt val!")
