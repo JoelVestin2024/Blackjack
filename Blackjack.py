@@ -84,10 +84,17 @@ def spela_blackjack():
         delad_hand = dela_hand(spelarens_kort)
         if delad_hand:
             if saldo >= satsning * 2:
-                val_splitta = input(f"\nDu har två {spelarens_kort[0]}! Vill du splitta? (j/n): ")
-                if val_splitta == "j":
-                    delad_hand[0].append(kortlek.pop())
-                    delad_hand[1].append(kortlek.pop())
+                while True:
+                    val_splitta = input(f"\nDu har två {spelarens_kort[0]}! Vill du splitta? (j/n): ").lower()
+            
+                    if val_splitta == "j":
+                        delad_hand[0].append(kortlek.pop())
+                        delad_hand[1].append(kortlek.pop())
+                        break
+                    elif val_splitta == "n":
+                        break
+                    else:
+                        print("Försök igen, felaktigt val!")
 
 #Spel För Hand Ett#
                 hand1 = delad_hand[0]
@@ -97,15 +104,20 @@ def spela_blackjack():
                 while True:
                     if beräkna_summa(hand1) == 21 or beräkna_summa(hand1) >=21:
                         break
-                    val = input("Vill du ta ett till kort på denna hand? (j/n):")
-                    if val.lower() == "j":
-                        hand1.append(kortlek.pop())
-                        print("Dina kort:", hand1, "Summa", beräkna_summa(hand1))
-                    else:
-                        break
-                summa1 = beräkna_summa(hand1)
-                print("Slutsumma Höger Hand:", summa1)
-              
+                    while True:
+                        val = input("Vill du ta ett till kort på denna hand? (j/n):")
+                        
+                        if val.lower() == "j":
+                            hand1.append(kortlek.pop())
+                            print("Dina kort:", hand1, "Summa", beräkna_summa(hand1))
+                        elif val.lower() == "n":
+                            break
+                        else:
+                            print("Försök igen, felaktigt val!")
+                        
+                    summa1 = beräkna_summa(hand1)
+                    print("Slutsumma Höger Hand:", summa1)
+                    break
 
 #Spel För Hand Två#
                 hand2 = delad_hand[1]

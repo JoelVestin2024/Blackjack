@@ -1,3 +1,6 @@
+2025-05-21
+Nu finns även felhantering när man får valet om att splitta, och i spel för hand1. Så att det inte kraschar vi fel inmatning, vilket det gjorde tidigare.
+
 2025-05-20
 Förbättrade satsningslogiken i spelet genom att lägga till felhantering för ogiltig input och tydliga kontroller för insatser som är negativa, noll eller större än spelarens saldo. Spelet ger nu bättre feedback och kraschar inte vid felaktiga inmatningar.
 
