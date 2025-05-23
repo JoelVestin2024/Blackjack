@@ -102,22 +102,20 @@ def spela_blackjack():
                 print("--- Höger Hand ---")
                 print("Dina kort:", hand1, "Summa:", hand1_summa)
                 while True:
-                    if beräkna_summa(hand1) == 21 or beräkna_summa(hand1) >=21:
+                    summa_hand1 = beräkna_summa(hand1)
+                    if summa_hand1 >= 21:
                         break
-                    while True:
-                        val = input("Vill du ta ett till kort på denna hand? (j/n):").lower()
+                    val = input("Vill du ta ett till kort på denna hand? (j/n):").lower()
+                    if val == "j":
+                        hand1.append(kortlek.pop())
+                        print("Dina kort:", hand1, "Summa", beräkna_summa(hand1))
+                    elif val == "n":
+                        break
+                    else:
+                        print("Försök igen, felaktigt val!")
                         
-                        if val == "j":
-                            hand1.append(kortlek.pop())
-                            print("Dina kort:", hand1, "Summa", beräkna_summa(hand1))
-                        elif val == "n":
-                            break
-                        else:
-                            print("Försök igen, felaktigt val!")
-                        
-                    summa1 = beräkna_summa(hand1)
-                    print("Slutsumma Höger Hand:", summa1)
-                    break
+                summa1 = beräkna_summa(hand1)
+                print("Slutsumma Höger Hand:", summa1)
 
 #Spel För Hand Två#
                 hand2 = delad_hand[1]
@@ -125,21 +123,24 @@ def spela_blackjack():
                 print("--- vänster Hand ---")
                 print("Dina kort:", hand2, "Summa:", hand2_summa)
                 while True:
-                    if beräkna_summa(hand2) == 21 or beräkna_summa(hand2) >=21:
+                    summa_hand2 = beräkna_summa(hand2)
+                    if summa_hand2 >= 21:
                         break
-                    val = input("Vill du ta ett till kort på denna hand? (j/n):") #******************#
-                    if val.lower() == "j":
+                    val = input("Vill du ta ett till kort på denna hand? (j/n):").lower()
+                    if val == "j":
                         hand2.append(kortlek.pop())
                         print("Dina kort:", hand2, "Summa", beräkna_summa(hand2))
-                    else:
+                    elif val == "n":
                         break
+                    else:
+                        print("Försök igen, felaktigt val!")
+
                 summa2 = beräkna_summa(hand2)
                 print("Slutsumma Vänster Hand:", summa2)
                 
-                
 #Beräkning Av Datorns Summa#
                 dator_summa = beräkna_summa(datorns_kort)
-                while dator_summa < 17 or dator_summa < summa1 or dator_summa < summa2:
+                while dator_summa < 17 and max(summa1, summa2) <= 21 and dator_summa < max(summa1, summa2):
                     datorns_kort.append(kortlek.pop())
                     dator_summa = beräkna_summa(datorns_kort)
 
