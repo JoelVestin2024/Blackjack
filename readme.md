@@ -1,3 +1,6 @@
+2025-05-26
+Fixat alla platser där spelet potentiellt skulle krascha.
+
 2025-05-21
 Nu finns även felhantering när man får valet om att splitta, och i spel för hand1. Så att det inte kraschar vi fel inmatning, vilket det gjorde tidigare.
 

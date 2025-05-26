@@ -178,10 +178,15 @@ def spela_blackjack():
                     saldo -= satsning
                 else:
                     print("Push")
-
+                
                 print("\nDu har nu", saldo, "Riksdaler.")
-                spela_igen = input("Vill du spela igen? (j/n): ")   #*******************************#
-                spela_vidare = spela_igen == "j"
+                while True:
+                    spela_igen = input("Vill du spela igen? (j/n): ").lower()
+                    if spela_igen in ["j", "n"]:
+                        spela_vidare = spela_igen == "j"
+                        break
+                    else:
+                        print("Försök igen, felaktigt val!")
                 continue
                                              
 #Ifall Korten I Handen Är Olika Så Hoppar Spelet Över Allt Och Börjar Nedanför Här Efter Delen "Kort Visas"#
@@ -195,9 +200,14 @@ def spela_blackjack():
             print("Blackjack! Du vinner!")                                            
             saldo += satsning * 1.5
         else:
-            spelaren_färdig = False                                                        
+            spelaren_färdig = False
             while spelarens_summa < 21 and not spelaren_färdig:                                
-                val = input("\nVill du ta ett till kort? (j/n): ")     #*******************************#                      
+                while True:
+                    val = input("\nVill du ta ett till kort? (j/n): ").lower()
+                    if val in ["j", "n"]:
+                        break
+                    else:
+                        print("Försök igen, felaktigt val!")
                 if val == "j":                                                                
                     nytt_kort = kortlek.pop()                                                  
                     spelarens_kort.append(nytt_kort)                                           
@@ -206,7 +216,7 @@ def spela_blackjack():
                     if spelarens_summa > 21:                                                 
                         print("Du blev tjock! Datorn vinner!")                              
                         saldo -= satsning                                                    
-                        spelaren_färdig = True                                               
+                        spelaren_färdig = True                                                
                 else:                                                                          
                     spelaren_färdig = True
                     
@@ -236,11 +246,12 @@ def spela_blackjack():
 #Spela Igen?#       
             print("Du har:", saldo,"Riksdaler" )
             if saldo >= 0:
-                spela_igen = input("\nVill du spela igen? (j/n): ")    #*********************************#
-                spela_vidare = spela_igen == "j" 
-            else:
-                spelaren_färdig = True
+                while True:
+                    spela_igen = input("\nVill du spela igen? (j/n): ").lower()
+                    if spela_igen in ["j", "n"]:
+                        spela_vidare = spela_igen == "j"
+                        break
+                    else:
+                        print("Försök igen ,felaktigt val!")
                 
 spela_blackjack()
-
-#Fixa problemet med att allt craschar om man inte väljer j eller n#
