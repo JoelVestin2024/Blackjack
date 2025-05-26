@@ -255,3 +255,5 @@ def spela_blackjack():
                         print("Försök igen ,felaktigt val!")
                 
 spela_blackjack()
+
+#Försök att fixa double-down#
