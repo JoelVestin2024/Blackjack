@@ -74,11 +74,55 @@ def spela_blackjack():
         print("Spelarens kort:", spelarens_kort, "Summa:", spelarens_summa)                
         print("Datorns kort:", [datorns_kort[0]], "+ ?")
         
-#Spelet Bryts Ifall Datorn Får Blackjack#
-        if datorns_summa == 21 and datorns_summa == spelarens_summa:
-            print("Push!")
-        if datorns_summa == 21:
-            print("Datorn fick Blackjack!")
+#Doubel-Down, ja eller nej?# 
+        double_down = False
+        if saldo >= satsning * 2:
+            val = input("Double Down? (j/n): ").lower()
+            if val == "j":
+                satsning *= 2
+                double_down = True
+                nytt_kort = kortlek.pop()
+                spelarens_kort.append(nytt_kort)
+                spelarens_summa = beräkna_summa(spelarens_kort)
+                print("\nDu drog:", nytt_kort)
+                print("Dina kort:", spelarens_kort, "Summa:", spelarens_summa)
+
+                if spelarens_summa > 21:
+                    print("Du blev tjock!")
+                    saldo -= satsning
+                    continue
+
+#Datorns tur efter double down#
+                print("\nDatorns kort:", datorns_kort, "Summa:", datorns_summa)
+                while datorns_summa < 17:
+                    nytt_kort = kortlek.pop()
+                    datorns_kort.append(nytt_kort)
+                    datorns_summa = beräkna_summa(datorns_kort)
+                    print("\nDatorn drar ett kort:", nytt_kort)
+                    print("Datorns nya summa:", datorns_summa)
+
+#Resultat efter double down#
+                if datorns_summa > 21 or spelarens_summa > datorns_summa:
+                    print("\nVinst!")
+                    saldo += satsning
+                elif datorns_summa > spelarens_summa:
+                    print("\nFörlust!")
+                    saldo -= satsning
+                else:
+                    print("\nPush!")
+
+                continue
+
+        if not double_down:
+            if datorns_summa == 21:
+                print("Datorn fick blackjack!")
+                saldo -= satsning
+                continue
+            
+            if spelarens_summa == 21:
+                print("Blackjack!")
+                saldo += satsning * 1.5
+                continue
 
 #Kollar Om Talen I Listan För "spelarens_kort" Är Likadana, Frågor Sedan Om Spelaren Vill Splitta Ifall Så Är Fallet#       
         delad_hand = dela_hand(spelarens_kort)
@@ -191,7 +235,6 @@ def spela_blackjack():
                                              
 #Ifall Korten I Handen Är Olika Så Hoppar Spelet Över Allt Och Börjar Nedanför Här Efter Delen "Kort Visas"#
 
-
 #Har Datorn 21?, Har Spelaren 21?, Spelaren Tar kort#
         if datorns_summa == 21:                            
             print("Datorn har 21! Spelet är slut.")                                        
@@ -255,5 +298,3 @@ def spela_blackjack():
                         print("Försök igen ,felaktigt val!")
                 
 spela_blackjack()
-
-#Försök att fixa double-down#

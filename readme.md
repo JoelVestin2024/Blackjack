@@ -1,3 +1,6 @@
+2025-05-26/27
+Implementerade en "double_down" funktion, vilket gör att spelaren efter de första två korten kan välja att dubbla sin insats och därefter automatiskt får ett extra kort innan turen går över till datorn.
+
 2025-05-26
 Fixat alla platser där spelet potentiellt skulle krascha.
 
